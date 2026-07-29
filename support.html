@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Ensemble Stage / 吹奏楽セッティング</title>
+<meta name="description" content="Ensemble Stage support and how-to guide (English / 日本語).">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="index.html">Ensemble Stage</a>
+    <span class="spacer"></span>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button data-lang-btn="ja" type="button">日本語</button>
+      <button data-lang-btn="en" type="button">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>
+    <span class="lang-ja">使い方・サポート</span>
+    <span class="lang-en">Support &amp; User Guide</span>
+  </h1>
+  <p class="lead">
+    <span class="lang-ja">団員登録から配置図の出力までの流れを説明します。右上のボタンで英語／日本語を切り替えられます。</span>
+    <span class="lang-en">This guide walks through the app from roster to exported seating chart. Use the buttons at the top right to switch between English and 日本語.</span>
+  </p>
+
+  <!-- ============ QUICK START ============ -->
+  <h2><span class="lang-ja">5 つの手順（全体の流れ）</span><span class="lang-en">The five steps</span></h2>
+  <div class="lang-ja">
+    <ol class="steps">
+      <li>団員を登録する（手入力または CSV）。</li>
+      <li>演奏会を作り、舞台（配置図）を用意する。</li>
+      <li>パートを選んで自動配置する。</li>
+      <li>ドラッグ・整列で位置を調整する。</li>
+      <li>PDF・画像として出力・共有する。</li>
+    </ol>
+  </div>
+  <div class="lang-en">
+    <ol class="steps">
+      <li>Register your members (by hand or from CSV).</li>
+      <li>Create a performance and add a stage layout.</li>
+      <li>Select a section and auto-place it.</li>
+      <li>Fine-tune positions by dragging and aligning.</li>
+      <li>Export and share as PDF or an image.</li>
+    </ol>
+  </div>
+
+  <!-- ============ ORG & ROSTER ============ -->
+  <h2><span class="lang-ja">1. 団体と団員名簿</span><span class="lang-en">1. Organizations &amp; roster</span></h2>
+
+  <div class="lang-ja">
+    <p>最初に団体（学校・楽団）を作ります。団体の追加は <strong>設定 → 団体</strong> から行えます。団体を作ると、名簿と演奏会が使えるようになります。</p>
+    <h3>団員を追加する</h3>
+    <p>名簿画面右上の「＋」で 1 人ずつ追加できます。氏名・ふりがな・学年・主担当楽器・持ち替え楽器・在籍状態・備考を登録できます。</p>
+    <p><strong>パートは主担当楽器から自動で決まります。</strong>たとえば「トランペット」を選べば金管に、「クラリネット」を選べば木管に分類されます。パートを手で指定する必要はありません。</p>
+    <h3>並べ替え・グループ表示・検索</h3>
+    <ul>
+      <li>系統別（木管・金管・打楽器…）／学年別にまとめて表示できます。</li>
+      <li>席順・ふりがな・氏名・学年で並べ替えられます（設定は端末に記憶されます）。</li>
+      <li>検索フィールドで氏名・ふりがなを絞り込めます。キーボードはフィールド右の「完了」で閉じられます。</li>
+      <li>行内でパート色のアバター・学年・在籍を素早く変更できます。</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/roster.png" alt="名簿画面">
+        <figcaption>名簿：楽器色のアバターと系統別のグループ表示。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="lang-en">
+    <p>Start by creating an organization (a school or ensemble) from <strong>Settings → Organizations</strong>. Once it exists, the roster and performances become available.</p>
+    <h3>Adding members</h3>
+    <p>Use the “+” at the top of the roster to add members one by one: name, phonetic reading, school year, primary instrument, doubling instruments, active status and notes.</p>
+    <p><strong>The part (section) is derived automatically from the primary instrument</strong> — pick “Trumpet” and the member is filed under Brass, pick “Clarinet” and under Woodwinds. You never set the part by hand.</p>
+    <h3>Sorting, grouping &amp; search</h3>
+    <ul>
+      <li>Group by family (woodwind, brass, percussion…) or by school year.</li>
+      <li>Sort by chair order, phonetic reading, name or year (remembered on the device).</li>
+      <li>Filter by name in the search field; dismiss the keyboard with the “Done” button above it.</li>
+      <li>Change the instrument avatar, year and active status inline in each row.</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/roster.png" alt="Roster screen">
+        <figcaption>Roster: instrument-colored avatars, grouped by family.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============ CSV IMPORT ============ -->
+  <h2 id="csv"><span class="lang-ja">2. CSV で名簿を取り込む</span><span class="lang-en">2. Importing a roster from CSV</span></h2>
+
+  <div class="lang-ja">
+    <p>名簿をまとめて登録したいときは CSV が便利です。名簿画面の「…」→「CSV を読み込む」、または団員がいないときの案内から取り込めます。ひな型は下のボタンから入手できます。</p>
+    <p style="text-align:center">
+      <a class="btn" href="sample_roster.csv" download>サンプル CSV（ひな型）をダウンロード</a>
+    </p>
+
+    <h3>列の構成</h3>
+    <p>次の列を用意します。<strong>「パート」の列は不要です</strong>（主担当楽器から自動で判定します）。列の順番は自由で、取り込み時に各列の意味を割り当てられます。</p>
+    <table>
+      <tr><th>列</th><th>必須</th><th>内容</th></tr>
+      <tr><td>氏名</td><td>必須</td><td>例：佐藤 陽向</td></tr>
+      <tr><td>ふりがな</td><td>任意</td><td>並べ替え・検索に使用</td></tr>
+      <tr><td>学年</td><td>任意</td><td>半角数字（例：1・2・3）</td></tr>
+      <tr><td>主担当楽器</td><td>推奨</td><td>例：クラリネット。ここからパートが決まります</td></tr>
+      <tr><td>持ち替え楽器</td><td>任意</td><td>複数ある場合は「・」や「/」で区切る</td></tr>
+      <tr><td>備考</td><td>任意</td><td>自由記入</td></tr>
+    </table>
+
+    <h3>楽器名について</h3>
+    <p>楽器名は日本語の標準名（フルート、クラリネット、トランペット など）で書くのが確実です。<code>Cl</code> や <code>Trumpet</code> のような略称・英名も可能な範囲で自動変換しますが、取り込み前の確認画面で「原文 → 変換候補」を必ず確認できます。標準楽器に一致しなかった場合も原文は備考へ残ります。</p>
+
+    <h3>ファイルの作り方（Excel / Numbers / Google スプレッドシート）</h3>
+    <ol class="steps">
+      <li>上のひな型をダウンロードして開きます。</li>
+      <li>1 行目の見出しはそのままに、2 行目以降へ団員を入力します。</li>
+      <li><strong>文字コードは UTF-8</strong> で保存します（Excel は「CSV UTF-8（コンマ区切り）」を選択）。区切りはコンマ（,）です。</li>
+      <li>アプリで「CSV を読み込む」→ ファイルを選択 → 列の割り当て → 内容を確認 → 取り込み、の順に進めます。</li>
+    </ol>
+    <div class="note">
+      既存の名簿は自動で上書きされません。氏名・ふりがな・学年・楽器から重複候補を検出し、確認画面で除外できます。
+    </div>
+
+    <h3>ひな型の中身（先頭の数行）</h3>
+    <pre class="mono">氏名,ふりがな,学年,主担当楽器,持ち替え楽器,備考
+佐藤 陽向,さとう ひなた,3,フルート,ピッコロ,パートリーダー
+鈴木 葵,すずき あおい,3,クラリネット,,
+高橋 蓮,たかはし れん,2,オーボエ,イングリッシュホルン,</pre>
+
+    <div class="shots">
+      <figure>
+        <img src="images/import.png" alt="CSV 取り込み画面">
+        <figcaption>取り込み画面からもひな型と作り方を開けます。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="lang-en">
+    <p>CSV is the fastest way to register many members. Open it from the roster’s “…” menu → “Import CSV”, or from the empty-roster prompt. Download the template below.</p>
+    <p style="text-align:center">
+      <a class="btn" href="sample_roster.csv" download>Download the sample CSV (template)</a>
+    </p>
+
+    <h3>Columns</h3>
+    <p>Prepare the following columns. <strong>You do not need a “part” column</strong> — the part is inferred from the primary instrument. Column order is free; you map each column during import.</p>
+    <table>
+      <tr><th>Column</th><th>Required</th><th>Notes</th></tr>
+      <tr><td>Name</td><td>Required</td><td>e.g. Hinata Sato</td></tr>
+      <tr><td>Phonetic</td><td>Optional</td><td>Used for sorting / search</td></tr>
+      <tr><td>School year</td><td>Optional</td><td>A number (1, 2, 3…)</td></tr>
+      <tr><td>Primary instrument</td><td>Recommended</td><td>e.g. Clarinet — this sets the part</td></tr>
+      <tr><td>Doubling instruments</td><td>Optional</td><td>Separate multiples with “·” or “/”</td></tr>
+      <tr><td>Notes</td><td>Optional</td><td>Free text</td></tr>
+    </table>
+
+    <h3>Instrument names</h3>
+    <p>Standard names are the most reliable. Common abbreviations and English names (e.g. <code>Cl</code>, <code>Trumpet</code>) are normalized where possible, and the confirmation screen always shows “original → suggested” so nothing is changed silently. Unrecognized text is preserved in the member’s notes.</p>
+
+    <h3>Preparing the file (Excel / Numbers / Google Sheets)</h3>
+    <ol class="steps">
+      <li>Download and open the template above.</li>
+      <li>Keep the header row; enter members from the second row onward.</li>
+      <li><strong>Save as UTF-8</strong> (in Excel choose “CSV UTF-8 (Comma delimited)”). The separator is a comma.</li>
+      <li>In the app: Import CSV → pick the file → map columns → review → import.</li>
+    </ol>
+    <div class="note">
+      Your existing roster is never overwritten automatically. Likely duplicates (by name, reading, year, instrument) are flagged and can be excluded on the review screen.
+    </div>
+
+    <h3>Template contents (first rows)</h3>
+    <pre class="mono">Name,Phonetic,Year,Primary,Doubling,Notes
+Hinata Sato,,3,Flute,Piccolo,Section leader
+Aoi Suzuki,,3,Clarinet,,
+Ren Takahashi,,2,Oboe,English Horn,</pre>
+
+    <div class="shots">
+      <figure>
+        <img src="images/import.png" alt="CSV import screen">
+        <figcaption>The template and this guide are reachable from the import screen too.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============ PERFORMANCE / LAYOUT ============ -->
+  <h2><span class="lang-ja">3. 演奏会と配置図</span><span class="lang-en">3. Performances &amp; layouts</span></h2>
+
+  <div class="lang-ja">
+    <p>演奏会を作成し、日付・会場・曲名を登録します。1 つの演奏会に複数の配置図（曲や場面で変わるもの）を持てます。</p>
+    <ul>
+      <li>「配置図を追加」で名称と舞台（会場プリセット）を選んで作成します。追加した配置図はその場で一覧に表示されます。</li>
+      <li>舞台の間口・奥行きはカードの ＋／− で調整できます。</li>
+      <li>各配置図には曲名を演奏順で登録でき、版数（v1, v2…）も持てます。</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/performance.png" alt="演奏会の詳細画面">
+        <figcaption>演奏会：情報・複数の配置図・舞台寸法をまとめて管理。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="lang-en">
+    <p>Create a performance and set its date, venue and pieces. A single performance can hold several layouts (for different pieces or scene changes).</p>
+    <ul>
+      <li>“Add layout” lets you name it and pick a stage (venue preset). New layouts appear in the list immediately.</li>
+      <li>Adjust stage width and depth with the +/− controls on the card.</li>
+      <li>Each layout keeps its pieces in performance order and a version number (v1, v2…).</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/performance.png" alt="Performance detail screen">
+        <figcaption>Performance: info, multiple layouts and stage dimensions in one place.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============ EDITOR ============ -->
+  <h2><span class="lang-ja">4. 舞台の編集</span><span class="lang-en">4. Editing the stage</span></h2>
+
+  <div class="lang-ja">
+    <h3>置く・選ぶ・動かす</h3>
+    <ul>
+      <li>「追加」から団員（人＋担当楽器）を舞台へ置きます。ピアノ・マリンバなどの大型楽器は設備としても単体で置けます。</li>
+      <li>すでに配置済みの団員は追加候補から自動的に除外され、重複しません。</li>
+      <li>オブジェクトは押した瞬間に選択され、そのままドラッグで移動します。指の位置に追従します。</li>
+      <li>2 本指でキャンバスを移動、ピンチで拡大・縮小、空白のダブルタップで全体表示に戻ります。</li>
+    </ul>
+    <h3>自動配置</h3>
+    <p>パート（と、その中の特定メンバー）を選び、直線／円弧・列数・人数・間隔・向きを指定して一括配置します。確定前にプレビューで確認できます。</p>
+    <h3>整える</h3>
+    <ul>
+      <li>回転ハンドルで自由角度に回せます（設置型オブジェクトはインスペクタの 90° 回転も可）。</li>
+      <li>複数選択して整列・等間隔配置ができます。</li>
+      <li>グリッド・中央線・近接オブジェクトへスナップします。舞台の縦横中央には十字のガイド線が出ます。</li>
+      <li><strong>譜面台は長押しでその場コピーできます</strong>（同じ譜面台を素早く増やせます）。</li>
+      <li>取り消し（Undo）・やり直し（Redo）に対応します。</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/stage.png" alt="舞台編集画面">
+        <figcaption>舞台キャンバス：縦横のセンターライン・奏者・大型楽器・平台。</figcaption>
+      </figure>
+    </div>
+    <h3>警告（助言）</h3>
+    <p>舞台外のオブジェクト、大きすぎる重なり、団員未割当の席、同じ団員の重複割当を助言として表示します。安全を保証するものではありません。</p>
+  </div>
+
+  <div class="lang-en">
+    <h3>Place, select, move</h3>
+    <ul>
+      <li>Use “Add” to place members (person + instrument). Large instruments such as piano or marimba can also be placed on their own as equipment.</li>
+      <li>Members already on stage are excluded from the add list, so nobody is placed twice.</li>
+      <li>An object is selected the moment you touch it and moves with your finger as you drag.</li>
+      <li>Pan with two fingers, pinch to zoom, double-tap empty space to fit the whole stage.</li>
+    </ul>
+    <h3>Auto-placement</h3>
+    <p>Choose a section (and specific members within it), then set line/arc, number of rows, count, spacing and facing to place everyone at once. A preview is shown before you commit.</p>
+    <h3>Tidying up</h3>
+    <ul>
+      <li>Rotate freely with the rotation handle (structural objects also offer a 90° rotate in the inspector).</li>
+      <li>Select multiple objects to align and distribute them evenly.</li>
+      <li>Snap to the grid, the center lines and nearby objects. A cross guide marks the stage center (both axes).</li>
+      <li><strong>Long-press a music stand to duplicate it in place</strong> — a quick way to add more of the same stand.</li>
+      <li>Undo and redo are supported.</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/stage.png" alt="Stage editor">
+        <figcaption>Stage canvas: horizontal &amp; vertical center lines, performers, large instruments and risers.</figcaption>
+      </figure>
+    </div>
+    <h3>Warnings (advisory)</h3>
+    <p>The app flags objects off the stage, excessive overlaps, seats without an assigned member, and the same member assigned twice. These are advisory only and are not a safety guarantee.</p>
+  </div>
+
+  <!-- ============ EXPORT ============ -->
+  <h2><span class="lang-ja">5. 出力・共有</span><span class="lang-en">5. Export &amp; sharing</span></h2>
+  <div class="lang-ja">
+    <ul>
+      <li>出力は画面のスクリーンショットではなく、モデル座標から生成します。選択枠やガイドは含まれません。</li>
+      <li>PDF・PNG・JPEG に対応し、A4 横が既定です。用紙サイズを選べます。</li>
+      <li><strong>氏名を表示する出力／しない出力</strong>を選べます（ホール提出などで個人名を出したくない場合に）。</li>
+      <li>iOS 標準の共有シートから印刷・保存・共有できます。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <ul>
+      <li>Exports are generated from model coordinates, not a screenshot — selection frames and guides are never included.</li>
+      <li>PDF, PNG and JPEG are supported; A4 landscape is the default, and you can choose the page size.</li>
+      <li>Choose <strong>with-names or without-names</strong> output (useful when you must not show personal names).</li>
+      <li>Print, save or share through the standard iOS share sheet.</li>
+    </ul>
+  </div>
+
+  <!-- ============ SETTINGS ============ -->
+  <h2><span class="lang-ja">6. 設定</span><span class="lang-en">6. Settings</span></h2>
+  <div class="lang-ja">
+    <ul>
+      <li><strong>楽器の管理</strong>：標準に無い楽器を追加でき、色・略称・椅子/譜面台の要否を編集できます。</li>
+      <li><strong>サンプル団体の表示</strong>：お試し用の吹奏楽団を表示／非表示にできます（自分で作った団体には影響しません）。</li>
+      <li><strong>団員配置時に譜面台も置く</strong>：奏者を置くときに譜面台（×型）も一緒に置くかを切り替えます。</li>
+      <li><strong>ヘルプ</strong>：このサポートページとプライバシーポリシーを開けます。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <ul>
+      <li><strong>Manage instruments</strong>: add instruments not in the catalog and edit color, abbreviation and chair/stand requirements.</li>
+      <li><strong>Show sample data</strong>: show or hide a demo band (your own organizations are untouched).</li>
+      <li><strong>Add a stand with each performer</strong>: whether an “×” music stand is placed together with a seated player.</li>
+      <li><strong>Help</strong>: opens this support page and the privacy policy.</li>
+    </ul>
+  </div>
+
+  <!-- ============ FAQ ============ -->
+  <h2><span class="lang-ja">よくある質問</span><span class="lang-en">FAQ</span></h2>
+  <div class="lang-ja">
+    <h3>追加した配置図が演奏会に出てきません。</h3>
+    <p>最新版では追加直後に一覧へ表示されます。表示されない場合はアプリを最新へ更新してください。</p>
+    <h3>CSV にパート列は要りますか？</h3>
+    <p>不要です。主担当楽器からパートを自動判定します。</p>
+    <h3>個人名を出さずに配置図を配れますか？</h3>
+    <p>できます。出力時に「氏名を表示しない」を選んでください。</p>
+    <h3>データはどこに保存されますか？</h3>
+    <p>この段階のアプリは端末内にのみ保存し、外部へ送信しません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+  <div class="lang-en">
+    <h3>A layout I added doesn’t show up in the performance.</h3>
+    <p>In the current version it appears immediately after you add it. If it doesn’t, please update to the latest version.</p>
+    <h3>Does the CSV need a “part” column?</h3>
+    <p>No. The part is inferred from the primary instrument.</p>
+    <h3>Can I share a chart without personal names?</h3>
+    <p>Yes — choose “without names” when exporting.</p>
+    <h3>Where is my data stored?</h3>
+    <p>At this stage the app stores everything on your device and sends nothing externally. See the <a href="privacy.html">privacy policy</a> for details.</p>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <h2><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></h2>
+  <div class="lang-ja">
+    <p>不具合の報告やご要望は <a href="mailto:kouhei1@gmail.com">kouhei1@gmail.com</a> までお寄せください。端末（iPad / iPhone）と iOS のバージョン、再現手順を書いていただけると助かります。</p>
+  </div>
+  <div class="lang-en">
+    <p>For bug reports and requests, email <a href="mailto:kouhei1@gmail.com">kouhei1@gmail.com</a>. Please include your device (iPad / iPhone), iOS version and steps to reproduce.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="bar">
+    <a href="index.html"><span class="lang-ja">ホーム</span><span class="lang-en">Home</span></a>
+    <a href="privacy.html"><span class="lang-ja">プライバシー</span><span class="lang-en">Privacy</span></a>
+    <span class="muted">© Ensemble Stage</span>
+  </div>
+</footer>
+</body>
+</html>
