@@ -213,6 +213,10 @@ footer.site .bar { justify-content: center; gap: 18px; flex-wrap: wrap; }
 .muted { color: var(--text-secondary); }
 
 /* ============ Android/Web wish-signup form (android/) ============ */
+.back-link { margin: 0 0 12px; font-size: 14px; }
+.back-link a { color: var(--text-secondary); text-decoration: none; }
+.back-link a:hover { color: var(--accent); text-decoration: underline; }
+
 .eyebrow {
   display: block;
   color: var(--text-secondary);
