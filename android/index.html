@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android &amp; Web Version — Ensemble Stage / 吹奏楽セッティング</title>
+<meta name="description" content="We're deciding whether to build an Android or browser version of Ensemble Stage based on interest — sign up for pre-release testing and launch news. Android版・ブラウザ版は、ご希望の人数を見て開発を検討します。登録で先行案内をお届けします。">
+<link rel="canonical" href="https://ensemble-stage.margheritaworks.com/android/">
+<link rel="stylesheet" href="../style.css">
+<script src="../lang.js"></script>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="../index.html"><span class="lang-ja">吹奏楽セッティング：配置図・座席表（Ensemble Stage）</span><span class="lang-en">Ensemble Stage</span></a>
+    <span class="spacer"></span>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button data-lang-btn="ja" type="button">日本語</button>
+      <button data-lang-btn="en" type="button">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <span class="eyebrow">ANDROID &amp; WEB</span>
+  <h1>
+    <span class="lang-ja">Android版・Web版を検討しています</span>
+    <span class="lang-en">We're Considering an Android or Web Version</span>
+  </h1>
+  <p class="lead">
+    <span class="lang-ja">現在は iPhone・iPad 版のみです。Android 版、またはパソコンのブラウザで使える版は、希望される方の人数を見て作るかどうかを決めます。</span>
+    <span class="lang-en">Ensemble Stage is currently iPhone and iPad only. Whether we build an Android version — or one that runs in a browser — will depend on how much interest we see.</span>
+  </p>
+  <p class="muted">
+    <span class="lang-ja">登録いただいた方には、（作ることになった場合）公開前のテスト参加のお願いと、公開のお知らせをメールでお送りします。それ以外の目的には使いません。いつでも解除できます。</span>
+    <span class="lang-en">If we move forward, we'll email everyone who signs up with an invite to test it before release, plus the launch announcement. We won't use your address for anything else, and you can unsubscribe anytime.</span>
+  </p>
+
+  <form method="post" action="https://api.margheritaworks.com/wish" class="card wish-form" id="wish-form">
+    <input type="hidden" name="app" value="ensemble-stage">
+    <input type="hidden" name="topic" value="android">
+    <input type="hidden" name="src" id="src" value="">
+    <input type="hidden" name="return" value="https://ensemble-stage.margheritaworks.com/android/">
+
+    <!-- Honeypot: hidden from people, left blank by real visitors -->
+    <div class="hp" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="wish-email">
+        <span class="lang-ja">メールアドレス</span><span class="lang-en">Email address</span>
+      </label>
+      <input type="email" id="wish-email" name="email" required maxlength="254"
+             inputmode="email" autocomplete="email" placeholder="you@example.com">
+    </div>
+
+    <fieldset>
+      <legend>
+        <span class="lang-ja">配置図を作るとき、どの端末を使いたいですか</span>
+        <span class="lang-en">Which device would you use to build layouts?</span>
+      </legend>
+      <div class="radio-row">
+        <label>
+          <input type="radio" name="platform_wish" value="android" required>
+          <span class="lang-ja">Android のスマートフォン・タブレット</span><span class="lang-en">An Android phone or tablet</span>
+        </label>
+        <label>
+          <input type="radio" name="platform_wish" value="browser" required>
+          <span class="lang-ja">パソコンのブラウザ（学校の PC・Chromebook を含む）</span><span class="lang-en">A computer browser (including school PCs / Chromebooks)</span>
+        </label>
+        <label>
+          <input type="radio" name="platform_wish" value="either" required>
+          <span class="lang-ja">どちらでもよい</span><span class="lang-en">Either is fine</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <span class="lang-ja">あなたの立場（任意）</span><span class="lang-en">Your role (optional)</span>
+      </legend>
+      <div class="radio-row">
+        <label>
+          <input type="radio" name="role" value="teacher">
+          <span class="lang-ja">顧問・指導者</span><span class="lang-en">Advisor / director</span>
+        </label>
+        <label>
+          <input type="radio" name="role" value="student">
+          <span class="lang-ja">学生指揮者・部長・部員</span><span class="lang-en">Student conductor, section/club leader, or member</span>
+        </label>
+        <label>
+          <input type="radio" name="role" value="community">
+          <span class="lang-ja">一般団体の運営</span><span class="lang-en">Community ensemble organizer</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <p class="hint">
+      <span class="lang-ja">登録いただいたアドレスは、Android 版・Web 版のテスト参加のお願いと公開のお知らせにのみ使います。メール内のリンクからいつでも解除できます。</span>
+      <span class="lang-en">We'll only use your address to invite you to test the Android/Web version and to announce its release. You can unsubscribe anytime via the link in that email.</span>
+      <a href="../privacy.html"><span class="lang-ja">プライバシーポリシー</span><span class="lang-en">Privacy Policy</span></a>
+    </p>
+
+    <button type="submit" class="btn submit" id="wish-submit">
+      <span class="lang-ja">Android版・Web版を希望する</span><span class="lang-en">Sign me up</span>
+    </button>
+  </form>
+
+  <div id="thanks" class="flash">
+    <span class="lang-ja">登録しました。作ることになったら、テストのお願いをメールでお送りします。</span>
+    <span class="lang-en">You're signed up. If we move forward, we'll email you with a testing invite.</span>
+  </div>
+  <div id="error-email" class="flash flash-error">
+    <span class="lang-ja">メールアドレスの形式を確認してください。</span>
+    <span class="lang-en">Please check that your email address is valid.</span>
+  </div>
+  <div id="error-platform" class="flash flash-error">
+    <span class="lang-ja">端末の希望を選んでください。</span>
+    <span class="lang-en">Please choose a device.</span>
+  </div>
+  <div id="error-rate" class="flash flash-error">
+    <span class="lang-ja">しばらく時間をおいて、もう一度お試しください。</span>
+    <span class="lang-en">Please wait a bit and try again.</span>
+  </div>
+
+  <p style="margin-top:48px; padding-top:24px; border-top:1px solid var(--hairline); text-align:center;">
+    <span class="lang-ja">iPhone・iPad 版はこちらからご利用いただけます。</span>
+    <span class="lang-en">The iPhone/iPad version is available now.</span>
+    <br>
+    <a class="btn" href="https://apps.apple.com/jp/app/id6793795823" target="_blank" rel="noopener" style="margin-top:14px;">
+      <span class="lang-ja">App Storeで見る</span><span class="lang-en">View on the App Store</span>
+    </a>
+  </p>
+</main>
+
+<footer class="site">
+  <div class="bar">
+    <a href="../index.html"><span class="lang-ja">ホーム</span><span class="lang-en">Home</span></a>
+    <a href="../support.html"><span class="lang-ja">サポート</span><span class="lang-en">Support</span></a>
+    <a href="../privacy.html"><span class="lang-ja">プライバシー</span><span class="lang-en">Privacy</span></a>
+    <a href="https://isitest1.github.io/portfolio-hub/"><span class="lang-ja">Kohei Ishikawa のポートフォリオ</span><span class="lang-en">Kohei Ishikawa’s Portfolio</span></a>
+    <span class="muted">© Ensemble Stage</span>
+  </div>
+</footer>
+
+<script>
+  // Copy ?src= (e.g. ?src=faq) into the hidden field. The form still works with JS disabled.
+  document.getElementById('src').value =
+    (new URLSearchParams(location.search).get('src') || '').slice(0, 16);
+  // Prevent double submission while still allowing normal (non-JS) form posting.
+  document.getElementById('wish-form').addEventListener('submit', function () {
+    var btn = document.getElementById('wish-submit');
+    btn.disabled = true;
+    setTimeout(function () { btn.disabled = false; }, 8000);
+  });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "080f9a36ec824583b4e20d654374ac38"}'></script>
+</body>
+</html>
