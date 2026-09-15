@@ -54,12 +54,17 @@ header.site {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--text);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.bar .spacer { flex: 1; }
+.bar .spacer { flex: 1; min-width: 8px; }
 
 .lang-switch {
   display: inline-flex;
+  flex-shrink: 0;
   border: 1px solid var(--hairline);
   border-radius: 999px;
   overflow: hidden;
@@ -75,6 +80,7 @@ header.site {
   padding: 6px 14px;
   cursor: pointer;
   min-height: 34px;
+  white-space: nowrap;
 }
 
 .lang-switch button.active {
