@@ -93,13 +93,13 @@
   <div class="lang-en">
     <p>Start by creating an organization (a school or ensemble) from <strong>Settings → Organizations</strong>. Once it exists, the roster and performances become available.</p>
     <h3>Adding members</h3>
-    <p>Use the “+” at the top of the roster to add members one by one: name, phonetic reading, school year, primary instrument, doubling instruments, active status and notes.</p>
-    <p><strong>The part (section) is derived automatically from the primary instrument</strong> — pick “Trumpet” and the member is filed under Brass, pick “Clarinet” and under Woodwinds. You never set the part by hand.</p>
+    <p>Use the "+" at the top of the roster to add members one by one: name, phonetic reading, school year, primary instrument, doubling instruments, active status and notes.</p>
+    <p><strong>The part (section) is derived automatically from the primary instrument</strong> — pick "Trumpet" and the member is filed under Brass, pick "Clarinet" and under Woodwinds. You never set the part by hand.</p>
     <h3>Sorting, grouping &amp; search</h3>
     <ul>
       <li>Group by family (woodwind, brass, percussion…) or by school year.</li>
       <li>Sort by chair order, phonetic reading, name or year (remembered on the device).</li>
-      <li>Filter by name in the search field; dismiss the keyboard with the “Done” button above it.</li>
+      <li>Filter by name in the search field; dismiss the keyboard with the "Done" button above it.</li>
       <li>Change the instrument avatar, year and active status inline in each row.</li>
     </ul>
     <div class="shots">
@@ -160,25 +160,25 @@
   </div>
 
   <div class="lang-en">
-    <p>CSV is the fastest way to register many members. Open it from the roster’s “…” menu → “Import CSV”, or from the empty-roster prompt. Download the template below.</p>
+    <p>CSV is the fastest way to register many members. Open it from the roster's "…" menu → "Import CSV", or from the empty-roster prompt. Download the template below.</p>
     <p style="text-align:center">
       <a class="btn" href="sample_roster.csv" download>Download the roster template CSV</a>
     </p>
 
     <h3>Columns</h3>
-    <p>Prepare the following columns. <strong>You do not need a “part” column</strong> — the part is inferred from the primary instrument. Column order is free; you map each column during import.</p>
+    <p>Prepare the following columns. <strong>You do not need a "part" column</strong> — the part is inferred from the primary instrument. Column order is free; you map each column during import.</p>
     <table>
       <tr><th>Column</th><th>Required</th><th>Notes</th></tr>
       <tr><td>Name</td><td>Required</td><td>e.g. Hinata Sato</td></tr>
       <tr><td>Phonetic</td><td>Optional</td><td>Used for sorting / search</td></tr>
       <tr><td>School year</td><td>Optional</td><td>A number (1, 2, 3…)</td></tr>
       <tr><td>Primary instrument</td><td>Recommended</td><td>e.g. Clarinet — this sets the part</td></tr>
-      <tr><td>Doubling instruments</td><td>Optional</td><td>Separate multiples with “·” or “/”</td></tr>
+      <tr><td>Doubling instruments</td><td>Optional</td><td>Separate multiples with "·" or "/"</td></tr>
       <tr><td>Notes</td><td>Optional</td><td>Free text</td></tr>
     </table>
 
     <h3>Instrument names</h3>
-    <p>Standard names are the most reliable. Common abbreviations and English names (e.g. <code>Cl</code>, <code>Trumpet</code>) are normalized where possible, and the confirmation screen always shows “original → suggested” so nothing is changed silently. Unrecognized text is preserved in the member’s notes.</p>
+    <p>Standard names are the most reliable. Common abbreviations and English names (e.g. <code>Cl</code>, <code>Trumpet</code>) are normalized where possible, and the confirmation screen always shows "original → suggested" so nothing is changed silently. Unrecognized text is preserved in the member's notes.</p>
 
     <h3>Preparing the file (Excel / Numbers / Google Sheets)</h3>
     <ol class="steps">
@@ -220,7 +220,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   <div class="lang-en">
     <p>Create a performance and set its date, venue and pieces. A single performance can hold several layouts (for different pieces or scene changes).</p>
     <ul>
-      <li>“Add layout” lets you name it and pick a stage (venue preset). New layouts appear in the list immediately.</li>
+      <li>"Add layout" lets you name it and pick a stage (venue preset). New layouts appear in the list immediately.</li>
       <li>Adjust stage width and depth with the +/− controls on the card.</li>
       <li>Each layout keeps its pieces in performance order and a version number (v1, v2…).</li>
     </ul>
@@ -266,7 +266,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   <div class="lang-en">
     <h3>Place, select, move</h3>
     <ul>
-      <li>Use “Add” to place members (person + instrument). Large instruments such as piano or marimba can also be placed on their own as equipment.</li>
+      <li>Use "Add" to place members (person + instrument). Large instruments such as piano or marimba can also be placed on their own as equipment.</li>
       <li>Members already on stage are excluded from the add list, so nobody is placed twice.</li>
       <li>An object is selected the moment you touch it and moves with your finger as you drag.</li>
       <li>Pan with two fingers, pinch to zoom, double-tap empty space to fit the whole stage.</li>
@@ -291,8 +291,107 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     <p>The app flags objects off the stage, excessive overlaps, seats without an assigned member, and the same member assigned twice. These are advisory only and are not a safety guarantee.</p>
   </div>
 
+  <!-- ============ GUEST PERFORMERS ============ -->
+  <h2 id="guest"><span class="lang-ja">5. 名簿にない奏者を配置する（ゲスト奏者）</span><span class="lang-en">5. Placing performers not in the roster (guest performers)</span></h2>
+
+  <div class="lang-ja">
+    <p>ゲスト奏者機能を使うと、名簿に登録していない奏者を配置図へ置けます。正式な団員と視覚的に区別しながら、同じ配置図で一緒に管理できます。</p>
+
+    <h3>こんなときに使います</h3>
+    <ul>
+      <li><strong>賛助・助奏の方</strong>：他団体から一時的に参加する奏者。</li>
+      <li><strong>一部の曲だけ参加する奏者</strong>：「第1部のみ出演」「第2部から合流」など。</li>
+      <li><strong>エキストラ</strong>：コンクールや演奏会で招く外部奏者。</li>
+      <li>まだ名簿に登録していない入団予定の方。</li>
+    </ul>
+
+    <h3>ゲスト奏者を追加する</h3>
+    <ol class="steps">
+      <li>舞台編集画面で「<strong>追加 → ゲスト奏者を追加</strong>」をタップします。</li>
+      <li>楽器を選びます（必須）。</li>
+      <li>氏名を入力します（任意。配置図上の表示に使います）。</li>
+      <li>区分ラベルを選ぶかカスタム入力します（任意）。</li>
+      <li>点線表示のオン／オフを選びます（既定はオン）。</li>
+      <li>人数を指定して「<strong>追加</strong>」をタップします。</li>
+    </ol>
+    <div class="shots">
+      <figure>
+        <img src="images/guest-add.png" alt="ゲスト奏者追加シート">
+        <figcaption>「追加 → ゲスト奏者を追加」から楽器・氏名・区分ラベル・点線表示・人数を指定します。</figcaption>
+      </figure>
+    </div>
+
+    <h3>区分ラベル</h3>
+    <p>「賛助」「エキストラ」「第1部のみ」「第2部のみ」のプリセットをワンタップで選べます。自由入力も可能です。ラベルは奏者の丸に表示されるため、配置図を共有したときに役割がすぐ伝わります。</p>
+
+    <h3>点線表示</h3>
+    <p>ゲスト奏者は既定で<strong>点線の丸</strong>で表示されます。団員（実線）と一目で区別できるため、ステージ担当者が配置図を見たときに状況を把握しやすくなります。</p>
+    <ul>
+      <li>奏者を選んでインスペクタを開くと、点線／実線をいつでも切り替えられます。</li>
+      <li>複数選択して一括変更することもできます。</li>
+      <li>PDF・画像への出力にも反映されます。点線の奏者がいるときは出力の凡例に「--- ゲスト・賛助等」が自動で追加されます。</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/guest-canvas.png" alt="点線表示のゲスト奏者が配置された舞台">
+        <figcaption>点線の丸がゲスト・賛助奏者。団員（実線）と一目で区別できます。</figcaption>
+      </figure>
+    </div>
+
+    <h3>後から名簿に登録する</h3>
+    <p>ゲスト奏者が正式に入団した場合は、キャンバス上でその奏者を選んでインスペクタの「<strong>名簿に登録</strong>」をタップします。氏名・学年・パートを入力すると、配置図の割り当てを保ったまま名簿へ追加されます。この操作は取り消し（Undo）できます。</p>
+  </div>
+
+  <div class="lang-en">
+    <p>The guest performer feature lets you place performers who are not in your roster on the stage layout — keeping them visually distinct from registered members while managing everything in the same chart.</p>
+
+    <h3>When to use it</h3>
+    <ul>
+      <li><strong>Guest or assistant musicians</strong> joining temporarily from another ensemble.</li>
+      <li><strong>Players who appear in only some pieces</strong> — "Part 1 only," "joining from Part 2," etc.</li>
+      <li><strong>Extras</strong> — professional or student players invited for a concert or contest.</li>
+      <li>Prospective new members who have not been registered yet.</li>
+    </ul>
+
+    <h3>Adding a guest performer</h3>
+    <ol class="steps">
+      <li>In the stage editor, tap <strong>Add → Add guest performer</strong>.</li>
+      <li>Select the instrument (required).</li>
+      <li>Optionally enter a display name shown on the chart.</li>
+      <li>Optionally pick or type a participation label.</li>
+      <li>Choose whether to show a dashed outline (on by default).</li>
+      <li>Set the count and tap <strong>Add</strong>.</li>
+    </ol>
+    <div class="shots">
+      <figure>
+        <img src="images/guest-add-en.png" alt="Add guest performer sheet">
+        <figcaption>Tap "Add → Add guest performer" to set the instrument, name, label, outline style and count.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Participation labels</h3>
+    <p>Quick-select preset labels — "Guest," "Extra," "Part 1 only," "Part 2 only" — or type any custom text. The label appears inside the performer's circle so anyone reading the chart immediately understands the role.</p>
+
+    <h3>Dashed outline</h3>
+    <p>Guest performers are shown with a <strong>dashed circle</strong> by default, making them visually distinct from roster members (solid circles) at a glance. This is especially helpful for stage managers reviewing the layout.</p>
+    <ul>
+      <li>Select any performer and open the inspector to toggle between dashed and solid at any time.</li>
+      <li>Multi-select and apply the change to several performers at once.</li>
+      <li>The style carries through to PDF and image exports. When dashed performers are present, a "--- Guest / assistant" legend entry is added automatically.</li>
+    </ul>
+    <div class="shots">
+      <figure>
+        <img src="images/guest-canvas-en.png" alt="Stage with dashed guest performers">
+        <figcaption>Dashed circles mark guest and assistant performers — easy to distinguish from roster members at a glance.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Registering as a roster member later</h3>
+    <p>If a guest performer officially joins the ensemble, select them on the canvas, open the inspector, and tap <strong>"Register in roster."</strong> Fill in the name, year and instrument and they are added to the roster while keeping their stage assignment intact. The operation can be undone.</p>
+  </div>
+
   <!-- ============ EXPORT ============ -->
-  <h2><span class="lang-ja">5. 出力・共有</span><span class="lang-en">5. Export &amp; sharing</span></h2>
+  <h2><span class="lang-ja">6. 出力・共有</span><span class="lang-en">6. Export &amp; sharing</span></h2>
   <div class="lang-ja">
     <ul>
       <li>出力は画面のスクリーンショットではなく、モデル座標から生成します。選択枠やガイドは含まれません。</li>
@@ -311,7 +410,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ SETTINGS ============ -->
-  <h2><span class="lang-ja">6. 設定</span><span class="lang-en">6. Settings</span></h2>
+  <h2><span class="lang-ja">7. 設定</span><span class="lang-en">7. Settings</span></h2>
   <div class="lang-ja">
     <ul>
       <li><strong>楽器の管理</strong>：標準に無い楽器を追加でき、色・略称・椅子/譜面台の要否を編集できます。</li>
@@ -324,7 +423,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     <ul>
       <li><strong>Manage instruments</strong>: add instruments not in the catalog and edit color, abbreviation and chair/stand requirements.</li>
       <li><strong>Show demo data</strong>: show or hide a demo band (your own organizations are untouched).</li>
-      <li><strong>Add a stand with each performer</strong>: whether an “×” music stand is placed together with a seated player.</li>
+      <li><strong>Add a stand with each performer</strong>: whether an "×" music stand is placed together with a seated player.</li>
       <li><strong>Help</strong>: opens this support page and the privacy policy.</li>
     </ul>
   </div>
@@ -338,18 +437,22 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     <p>不要です。主担当楽器からパートを自動判定します。</p>
     <h3>個人名を出さずに配置図を配れますか？</h3>
     <p>できます。出力時に「氏名を表示しない」を選んでください。</p>
+    <h3>ゲスト奏者と団員の違いは何ですか？</h3>
+    <p>団員は名簿に登録された正式なメンバーです。ゲスト奏者は名簿に登録せずに配置図だけへ一時的に置ける奏者です。後から名簿に登録することもできます。</p>
     <h3>データはどこに保存されますか？</h3>
     <p>この段階のアプリは端末内にのみ保存し、外部へ送信しません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
     <h3>Android版・パソコン版はありますか？</h3>
     <p>現在は iPhone・iPad 版のみです。希望される方の人数を見て作るかどうかを決めます。こちらから登録をお願いします → <a href="android/?src=faq">Android版・Web版を希望する</a></p>
   </div>
   <div class="lang-en">
-    <h3>A layout I added doesn’t show up in the performance.</h3>
-    <p>In the current version it appears immediately after you add it. If it doesn’t, please update to the latest version.</p>
-    <h3>Does the CSV need a “part” column?</h3>
+    <h3>A layout I added doesn't show up in the performance.</h3>
+    <p>In the current version it appears immediately after you add it. If it doesn't, please update to the latest version.</p>
+    <h3>Does the CSV need a "part" column?</h3>
     <p>No. The part is inferred from the primary instrument.</p>
     <h3>Can I share a chart without personal names?</h3>
-    <p>Yes — choose “without names” when exporting.</p>
+    <p>Yes — choose "without names" when exporting.</p>
+    <h3>What is the difference between a guest performer and a roster member?</h3>
+    <p>Roster members are officially registered in your organization. Guest performers are placed directly on the layout without registration — useful for temporary additions. You can always register a guest as a roster member later.</p>
     <h3>Where is my data stored?</h3>
     <p>At this stage the app stores everything on your device and sends nothing externally. See the <a href="privacy.html">privacy policy</a> for details.</p>
     <h3>Is there an Android or desktop version?</h3>
@@ -371,7 +474,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     <a href="index.html"><span class="lang-ja">ホーム</span><span class="lang-en">Home</span></a>
     <a href="privacy.html"><span class="lang-ja">プライバシー</span><span class="lang-en">Privacy</span></a>
     <a href="android/?src=site"><span class="lang-ja">Android版・Web版</span><span class="lang-en">Android &amp; Web</span></a>
-    <a href="https://isitest1.github.io/portfolio-hub/"><span class="lang-ja">Kohei Ishikawa のポートフォリオ</span><span class="lang-en">Kohei Ishikawa’s Portfolio</span></a>
+    <a href="https://isitest1.github.io/portfolio-hub/"><span class="lang-ja">Kohei Ishikawa のポートフォリオ</span><span class="lang-en">Kohei Ishikawa's Portfolio</span></a>
     <span class="muted">© Ensemble Stage</span>
   </div>
 </footer>
