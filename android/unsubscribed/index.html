@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../../styles.css?v=13">
+<link rel="stylesheet" href="../../styles.css?v=21">
 <script src="../../lang.js"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 <nav class="nav" aria-label="メイン">
 <a class="brand" href="../../index.html"><img class="brand__icon" src="../../assets/app-icon.png" width="32" height="32" alt=""><span class="lang-ja">吹奏楽セッティング</span><span class="lang-en">Ensemble Stage</span></a>
 <div class="nav__right">
-<div class="lang-switch" role="group" aria-label="Language"><button data-lang-btn="ja" type="button">日本語</button><button data-lang-btn="en" type="button">English</button></div>
+<button class="langtoggle" type="button" aria-label="Language / 言語切替" onclick="window.__setLang&&window.__setLang(document.documentElement.getAttribute('data-lang')==='en'?'ja':'en')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"></path></svg><span class="lang-ja">EN</span><span class="lang-en">日本語</span></button>
 </div>
 </nav>
 </div>

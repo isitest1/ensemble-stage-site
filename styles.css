@@ -39,7 +39,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
   background: var(--bg);
@@ -49,6 +49,7 @@ body {
   line-height: 1.8;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow-x: clip;
 }
 img, video { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
@@ -97,6 +98,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .squiggle path { fill: none; stroke: var(--arch-inner); stroke-width: 7; stroke-linecap: round; }
 .lead { max-width: 700px; font-size: clamp(16px, 1.6vw, 19px); }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding-top: 4px; }
+/* flex カラムの子（見出し・リード等）が content 幅に広がってページを横にはみ出すのを防ぐ */
+.hero > * { max-width: 100%; min-width: 0; }
 
 /* 製品画面の枠：背景のにじみは画像の後ろだけに使う */
 .showcase { position: relative; overflow: hidden; padding: 40px var(--gutter); }
@@ -217,17 +220,21 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 760px) {
   :root { --gutter: 16px; --section-gap: 80px; --card-pad: 24px; --r-card: 28px; --r-frame: 36px; }
   .nav-wrap { padding-top: 12px; }
-  /* モバイルのナビは2行に。1行目＝ブランド名＋サポート、2行目＝言語切替（中央）。
-     こうすることでブランド名が省略されず、サポートも言語切替も全部収まる。
-     App Store ボタンだけ隠す（同じCTAがヒーローにあるため）。 */
-  .nav { height: auto; min-height: 56px; padding: 9px 18px; gap: 6px 14px; flex-wrap: wrap; }
+  /* モバイルのナビは1行に収める：ブランド名＋サポート＋小さな言語切替。
+     文字とトグルを小さくして全部1行に入れる。App Store ボタンは隠す（同じCTAがヒーローにある）。 */
+  /* 1行：ブランド名＋サポート＋コンパクトな言語トグル。足りなければ名前だけ省略、
+     サポート・トグルは必ず全部見せる。App Store は隠す（ヒーローに同じCTA）。 */
+  .nav { height: 56px; padding: 0 12px 0 16px; gap: 10px; }
   .nav__links { display: none; }
   .nav__cta { display: none; }
-  .brand { min-width: 0; }
-  .brand__icon { width: 28px; height: 28px; }
-  .brand span { font-size: 16px; }
-  .nav__support { display: inline-flex; align-items: center; margin-left: auto; min-height: 40px; padding: 0 4px; color: var(--accent); font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap; }
-  .nav__right { flex-basis: 100%; justify-content: center; gap: 14px; }
+  .brand { flex: 1 1 auto; min-width: 0; }
+  .brand__icon { width: 26px; height: 26px; }
+  .brand span { font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .nav__support { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: var(--accent); font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  .nav__right, .langtoggle { flex-shrink: 0; }
+  .langtoggle { padding: 6px 10px; font-size: 12px; min-height: 36px; gap: 4px; }
+  /* ヒーロー見出しが狭い画面で横にはみ出す（＝ページ全体が横スクロールしナビがずれる）のを防ぐ */
+  .hero h1 { font-size: 34px; }
   .hero { padding: 56px 0 40px; }
   .actions .btn { width: 100%; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
@@ -274,6 +281,11 @@ html[data-lang="ja"] .lang-en { display: none !important; }
 .lang-switch { display: inline-flex; flex-shrink: 0; border: 1px solid var(--line); border-radius: var(--r-pill); overflow: hidden; background: var(--surface); }
 .lang-switch button { border: 0; background: transparent; color: var(--muted); font: 500 14px/1 var(--font-body); padding: 8px 13px; min-height: 40px; cursor: pointer; white-space: nowrap; }
 .lang-switch button.active { background: var(--accent); color: var(--on-accent); }
+
+/* コンパクトな言語トグル（1ボタンで日本語↔English を切替。地球アイコン＋切替先の言語名） */
+.langtoggle { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; border: 1px solid var(--line); border-radius: var(--r-pill); background: var(--surface); color: var(--on-accent-tint); font: 700 13px/1 var(--font-body); padding: 8px 13px; min-height: 40px; cursor: pointer; white-space: nowrap; transition: border-color .08s ease-out, color .08s ease-out; }
+.langtoggle:hover { border-color: var(--accent); color: var(--accent); }
+.langtoggle svg { flex-shrink: 0; }
 
 /* 読みもの（プロース）ページ */
 .page { width: min(880px, 100% - 2 * var(--gutter)); margin-inline: auto; padding-top: 64px; padding-bottom: 24px; }
