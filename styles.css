@@ -219,15 +219,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .nav-wrap { padding-top: 12px; }
   .nav { height: 56px; padding-left: 16px; gap: 10px; }
   .nav__links { display: none; }
-  .nav__support { display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; color: var(--accent); font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap; }
-  /* トップページ：モバイルでは App Store ボタンを隠す（ヒーローに同じCTAがあるため）。言語切替とサポートの場所を確保。 */
+  /* トップページのモバイルは「ブランド名＋言語切替」を優先。
+     App Store ボタンとサポートリンクは隠す（前者はヒーロー、後者はフッターと「お問い合わせ」にある）。
+     これでブランド名「吹奏楽セッティング」が省略されず全部出る。 */
   .nav__cta { display: none; }
-  /* ブランド名は残す。幅が足りないときだけ名前側を詰める（言語切替・ボタンは固定で必ず全部見せる）。 */
+  .nav__support { display: none; }
   .brand { min-width: 0; }
   .brand__icon { width: 28px; height: 28px; }
-  .brand span { font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .nav__right, .lang-switch, .nav__support, .nav .btn { flex-shrink: 0; }
-  .lang-switch button { padding: 8px 10px; font-size: 13px; }
+  .brand span { font-size: 16px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav__right, .lang-switch, .nav .btn { flex-shrink: 0; }
+  .lang-switch button { padding: 8px 11px; }
   .hero { padding: 56px 0 40px; }
   .actions .btn { width: 100%; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
