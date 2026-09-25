@@ -21,22 +21,46 @@
 <meta name="twitter:description" content="Ensemble Stage support and how-to guide (English / 日本語).">
 <meta name="twitter:image" content="https://ensemble-stage.margheritaworks.com/images/og.png">
 
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#FBF9F4">
+<meta name="apple-itunes-app" content="app-id=6793795823">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=4">
 <script src="lang.js"></script>
 </head>
 <body>
-<header class="site">
-  <div class="bar">
-    <a class="brand" href="index.html"><span class="lang-ja">吹奏楽セッティング：配置図・座席表（Ensemble Stage）</span><span class="lang-en">Ensemble Stage</span></a>
-    <span class="spacer"></span>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button data-lang-btn="ja" type="button">日本語</button>
-      <button data-lang-btn="en" type="button">English</button>
-    </div>
-  </div>
-</header>
+<a class="skip" href="#main"><span class="lang-ja">本文へ移動</span><span class="lang-en">Skip to content</span></a>
+<div class="nav-wrap">
+<nav class="nav" aria-label="メイン">
+<a class="brand" href="index.html"><img class="brand__icon" src="assets/app-icon.png" width="32" height="32" alt=""><span class="lang-ja">吹奏楽セッティング</span><span class="lang-en">Ensemble Stage</span></a>
+<div class="nav__right">
+<div class="lang-switch" role="group" aria-label="Language"><button data-lang-btn="ja" type="button">日本語</button><button data-lang-btn="en" type="button">English</button></div>
+<a class="btn btn--primary btn--sm" href="https://apps.apple.com/jp/app/id6793795823"><span class="lang-ja">App Storeで見る</span><span class="lang-en">App Store</span></a>
+</div>
+</nav>
+</div>
 
-<main>
+<main id="main">
+<div class="doc container">
+<nav class="toc" aria-label="目次">
+  <p class="back-link"><a href="index.html"><span class="lang-ja">← トップページへ戻る</span><span class="lang-en">← Back to home</span></a></p>
+  <p class="toc__title"><span class="lang-ja">目次</span><span class="lang-en">CONTENTS</span></p>
+  <ol>
+    <li><a href="#steps"><span class="lang-ja">5つの手順</span><span class="lang-en">The five steps</span></a></li>
+    <li><a href="#roster"><span class="lang-ja">1. 団体と団員名簿</span><span class="lang-en">1. Organizations &amp; roster</span></a></li>
+    <li><a href="#csv"><span class="lang-ja">2. CSVで名簿を取り込む</span><span class="lang-en">2. Import from CSV</span></a></li>
+    <li><a href="#performance"><span class="lang-ja">3. 演奏会と配置図</span><span class="lang-en">3. Performances &amp; layouts</span></a></li>
+    <li><a href="#editor"><span class="lang-ja">4. 舞台の編集</span><span class="lang-en">4. Editing the stage</span></a></li>
+    <li><a href="#guest"><span class="lang-ja">5. ゲスト奏者</span><span class="lang-en">5. Guest performers</span></a></li>
+    <li><a href="#export"><span class="lang-ja">6. 出力・共有</span><span class="lang-en">6. Export &amp; sharing</span></a></li>
+    <li><a href="#settings"><span class="lang-ja">7. 設定</span><span class="lang-en">7. Settings</span></a></li>
+    <li><a href="#sync"><span class="lang-ja">8. 端末間の同期</span><span class="lang-en">8. Sync across devices</span></a></li>
+    <li><a href="#faq"><span class="lang-ja">よくある質問</span><span class="lang-en">FAQ</span></a></li>
+    <li><a href="#contact"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></a></li>
+  </ol>
+</nav>
+<div class="page">
   <h1>
     <span class="lang-ja">使い方・サポート</span>
     <span class="lang-en">Support &amp; User Guide</span>
@@ -47,7 +71,7 @@
   </p>
 
   <!-- ============ QUICK START ============ -->
-  <h2><span class="lang-ja">5 つの手順（全体の流れ）</span><span class="lang-en">The five steps</span></h2>
+  <h2 id="steps"><span class="lang-ja">5 つの手順（全体の流れ）</span><span class="lang-en">The five steps</span></h2>
   <div class="lang-ja">
     <ol class="steps">
       <li>団員を登録する（手入力または CSV）。</li>
@@ -68,7 +92,7 @@
   </div>
 
   <!-- ============ ORG & ROSTER ============ -->
-  <h2><span class="lang-ja">1. 団体と団員名簿</span><span class="lang-en">1. Organizations &amp; roster</span></h2>
+  <h2 id="roster"><span class="lang-ja">1. 団体と団員名簿</span><span class="lang-en">1. Organizations &amp; roster</span></h2>
 
   <div class="lang-ja">
     <p>最初に団体（学校・楽団）を作ります。団体の追加は <strong>設定 → 団体</strong> から行えます。団体を作ると、名簿と演奏会が使えるようになります。</p>
@@ -84,8 +108,12 @@
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/roster.png" alt="名簿画面">
+        <img src="images/roster.png?v=4" alt="名簿画面">
         <figcaption>名簿：楽器色のアバターと系統別のグループ表示。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/member-edit.png?v=4" alt="団員を編集する画面">
+        <figcaption>団員の編集：氏名・学年・主担当楽器から自動でパートが決まります。</figcaption>
       </figure>
     </div>
   </div>
@@ -104,8 +132,12 @@
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/roster-en.png" alt="Roster screen">
+        <img src="images/roster-en.png?v=4" alt="Roster screen">
         <figcaption>Roster: instrument-colored avatars, grouped by family.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/member-edit.png?v=4" alt="Editing a member">
+        <figcaption>Editing a member: the part is derived from the primary instrument.</figcaption>
       </figure>
     </div>
   </div>
@@ -116,7 +148,7 @@
   <div class="lang-ja">
     <p>名簿をまとめて登録したいときは CSV が便利です。名簿画面の「…」→「CSV を読み込む」、または団員がいないときの案内から取り込めます。ひな型は下のボタンから入手できます。</p>
     <p style="text-align:center">
-      <a class="btn" href="sample_roster.csv" download>名簿テンプレートCSVをダウンロード</a>
+      <a class="btn btn--primary" href="sample_roster.csv" download>名簿テンプレートCSVをダウンロード</a>
     </p>
 
     <h3>列の構成</h3>
@@ -162,7 +194,7 @@
   <div class="lang-en">
     <p>CSV is the fastest way to register many members. Open it from the roster's "…" menu → "Import CSV", or from the empty-roster prompt. Download the template below.</p>
     <p style="text-align:center">
-      <a class="btn" href="sample_roster.csv" download>Download the roster template CSV</a>
+      <a class="btn btn--primary" href="sample_roster.csv" download>Download the roster template CSV</a>
     </p>
 
     <h3>Columns</h3>
@@ -200,7 +232,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ PERFORMANCE / LAYOUT ============ -->
-  <h2><span class="lang-ja">3. 演奏会と配置図</span><span class="lang-en">3. Performances &amp; layouts</span></h2>
+  <h2 id="performance"><span class="lang-ja">3. 演奏会と配置図</span><span class="lang-en">3. Performances &amp; layouts</span></h2>
 
   <div class="lang-ja">
     <p>演奏会を作成し、日付・会場・曲名を登録します。1 つの演奏会に複数の配置図（曲や場面で変わるもの）を持てます。</p>
@@ -211,7 +243,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/performance.png" alt="演奏会の詳細画面">
+        <img src="images/performance.png?v=4" alt="演奏会の詳細画面">
         <figcaption>演奏会：情報・複数の配置図・舞台寸法をまとめて管理。</figcaption>
       </figure>
     </div>
@@ -226,14 +258,14 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/performance-en.png" alt="Performance detail screen">
+        <img src="images/performance-en.png?v=4" alt="Performance detail screen">
         <figcaption>Performance: info, multiple layouts and stage dimensions in one place.</figcaption>
       </figure>
     </div>
   </div>
 
   <!-- ============ EDITOR ============ -->
-  <h2><span class="lang-ja">4. 舞台の編集</span><span class="lang-en">4. Editing the stage</span></h2>
+  <h2 id="editor"><span class="lang-ja">4. 舞台の編集</span><span class="lang-en">4. Editing the stage</span></h2>
 
   <div class="lang-ja">
     <h3>置く・選ぶ・動かす</h3>
@@ -255,7 +287,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/stage.png" alt="舞台編集画面">
+        <img src="images/stage.png?v=4" alt="舞台編集画面">
         <figcaption>舞台キャンバス：縦横のセンターライン・奏者・大型楽器・平台。</figcaption>
       </figure>
     </div>
@@ -283,7 +315,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
     </ul>
     <div class="shots">
       <figure>
-        <img src="images/stage-en.png" alt="Stage editor">
+        <img src="images/stage-en.png?v=4" alt="Stage editor">
         <figcaption>Stage canvas: horizontal &amp; vertical center lines, performers, large instruments and risers.</figcaption>
       </figure>
     </div>
@@ -391,7 +423,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ EXPORT ============ -->
-  <h2><span class="lang-ja">6. 出力・共有</span><span class="lang-en">6. Export &amp; sharing</span></h2>
+  <h2 id="export"><span class="lang-ja">6. 出力・共有</span><span class="lang-en">6. Export &amp; sharing</span></h2>
   <div class="lang-ja">
     <ul>
       <li>出力は画面のスクリーンショットではなく、モデル座標から生成します。選択枠やガイドは含まれません。</li>
@@ -410,7 +442,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ SETTINGS ============ -->
-  <h2><span class="lang-ja">7. 設定</span><span class="lang-en">7. Settings</span></h2>
+  <h2 id="settings"><span class="lang-ja">7. 設定</span><span class="lang-en">7. Settings</span></h2>
   <div class="lang-ja">
     <ul>
       <li><strong>楽器の管理</strong>：標準に無い楽器を追加でき、色・略称・椅子/譜面台の要否を編集できます。</li>
@@ -462,7 +494,7 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ FAQ ============ -->
-  <h2><span class="lang-ja">よくある質問</span><span class="lang-en">FAQ</span></h2>
+  <h2 id="faq"><span class="lang-ja">よくある質問</span><span class="lang-en">FAQ</span></h2>
   <div class="lang-ja">
     <h3>追加した配置図が演奏会に出てきません。</h3>
     <p>最新版では追加直後に一覧へ表示されます。表示されない場合はアプリを最新へ更新してください。</p>
@@ -497,24 +529,135 @@ Ren Takahashi,,2,Oboe,English Horn,</pre>
   </div>
 
   <!-- ============ CONTACT ============ -->
-  <h2><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></h2>
-  <div class="lang-ja">
-    <p>不具合の報告やご要望は <a href="mailto:support@margheritaworks.com">support@margheritaworks.com</a> までお寄せください。端末（iPad / iPhone）と iOS のバージョン、再現手順を書いていただけると助かります。</p>
-  </div>
-  <div class="lang-en">
-    <p>For bug reports and requests, email <a href="mailto:support@margheritaworks.com">support@margheritaworks.com</a>. Please include your device (iPad / iPhone), iOS version and steps to reproduce.</p>
-  </div>
+  <h2 id="contact"><span class="lang-ja">お問い合わせ</span><span class="lang-en">Contact</span></h2>
+  <p>
+    <span class="lang-ja">ご意見・ご要望・不具合の報告を、このフォームから直接お送りいただけます（アプリ内の「設定 → ご意見・ご要望」と同じ仕組みです）。</span>
+    <span class="lang-en">Send your feedback, requests or bug reports directly from this form — the same mechanism as “Settings → Feedback” inside the app.</span>
+  </p>
+
+  <form class="card wish-form" id="fb-form" novalidate>
+    <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+    <fieldset>
+      <legend><span class="lang-ja">種類</span><span class="lang-en">Type</span></legend>
+      <div class="radio-row">
+        <label><input type="radio" name="type" value="bug"><span class="lang-ja">不具合</span><span class="lang-en">Bug</span></label>
+        <label><input type="radio" name="type" value="request" checked><span class="lang-ja">要望</span><span class="lang-en">Request</span></label>
+        <label><input type="radio" name="type" value="question"><span class="lang-ja">質問</span><span class="lang-en">Question</span></label>
+        <label><input type="radio" name="type" value="other"><span class="lang-ja">その他</span><span class="lang-en">Other</span></label>
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label class="field-label" for="fb-message"><span class="lang-ja">内容</span><span class="lang-en">Message</span></label>
+      <textarea id="fb-message" name="message" rows="6" maxlength="2000"
+                placeholder="例：〇〇の画面で△△すると□□になります"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="fb-email"><span class="lang-ja">返信用メールアドレス（任意）</span><span class="lang-en">Reply email (optional)</span></label>
+      <input type="email" id="fb-email" name="email" maxlength="254" inputmode="email" autocomplete="email" placeholder="you@example.com">
+    </div>
+
+    <fieldset>
+      <legend><span class="lang-ja">あなたの立場（任意）</span><span class="lang-en">Your role (optional)</span></legend>
+      <div class="radio-row">
+        <label><input type="radio" name="role" value="teacher"><span class="lang-ja">顧問・指導者</span><span class="lang-en">Advisor / director</span></label>
+        <label><input type="radio" name="role" value="student"><span class="lang-ja">学生指揮者・部長・部員</span><span class="lang-en">Student conductor / leader / member</span></label>
+        <label><input type="radio" name="role" value="community"><span class="lang-ja">一般団体の運営</span><span class="lang-en">Community ensemble organizer</span></label>
+        <label><input type="radio" name="role" value="other"><span class="lang-ja">その他</span><span class="lang-en">Other</span></label>
+      </div>
+    </fieldset>
+
+    <p class="hint">
+      <span class="lang-ja">団体名・団員名・配置図の内容は送信されません。返信が必要な場合のみメールアドレスをご記入ください。</span>
+      <span class="lang-en">Organization names, member names and layout contents are never sent. Enter an email only if you'd like a reply.</span>
+    </p>
+
+    <button type="submit" class="btn btn--primary submit" id="fb-submit"><span class="lang-ja">送信する</span><span class="lang-en">Send</span></button>
+  </form>
+
+  <div id="fb-thanks" class="flash"><span class="lang-ja">送信しました。ありがとうございます。</span><span class="lang-en">Sent — thank you!</span></div>
+  <div id="fb-error-msg" class="flash flash-error"><span class="lang-ja">内容を入力してください。</span><span class="lang-en">Please enter a message.</span></div>
+  <div id="fb-error-generic" class="flash flash-error"><span class="lang-ja">送信できませんでした。時間をおいて、もう一度お試しください。</span><span class="lang-en">Couldn't send. Please wait a moment and try again.</span></div>
+
+  <p class="hint" style="margin-top:16px;">
+    <span class="lang-ja">うまく送信できないときは <a href="mailto:support@margheritaworks.com">support@margheritaworks.com</a> までメールでお寄せください。</span>
+    <span class="lang-en">If sending fails, email <a href="mailto:support@margheritaworks.com">support@margheritaworks.com</a>.</span>
+  </p>
+</div><!-- .page -->
+</div><!-- .doc -->
 </main>
 
-<footer class="site">
-  <div class="bar">
-    <a href="index.html"><span class="lang-ja">ホーム</span><span class="lang-en">Home</span></a>
-    <a href="privacy.html"><span class="lang-ja">プライバシー</span><span class="lang-en">Privacy</span></a>
-    <a href="android/?src=site"><span class="lang-ja">Android版・Web版</span><span class="lang-en">Android &amp; Web</span></a>
-    <a href="https://isitest1.github.io/portfolio-hub/"><span class="lang-ja">Kohei Ishikawa のポートフォリオ</span><span class="lang-en">Kohei Ishikawa's Portfolio</span></a>
-    <span class="muted">© Ensemble Stage</span>
-  </div>
+<footer class="footer container">
+<div class="footer__brand"><a class="brand" href="index.html"><img class="brand__icon" src="assets/app-icon.png" width="28" height="28" alt=""><span class="lang-ja">吹奏楽セッティング</span><span class="lang-en">Ensemble Stage</span></a><small>© 2026 Margherita Works</small></div>
+<ul class="footer__links">
+<li><a href="index.html"><span class="lang-ja">ホーム</span><span class="lang-en">Home</span></a></li>
+<li><a href="privacy.html"><span class="lang-ja">プライバシーポリシー</span><span class="lang-en">Privacy</span></a></li>
+<li><a href="android/?src=site"><span class="lang-ja">Android版・Web版</span><span class="lang-en">Android &amp; Web</span></a></li>
+<li><a href="https://margheritaworks.com">Margherita Works</a></li>
+</ul>
 </footer>
+<script>
+// ご意見フォーム：アプリの FeedbackView と同じ仕組み。
+// api.margheritaworks.com/feedback へ同じ形の JSON を POST し、失敗時はメールへフォールバックする。
+(function () {
+  var form = document.getElementById('fb-form');
+  if (!form) return;
+  var ENDPOINT = 'https://api.margheritaworks.com/feedback';
+  var EMAIL = 'support@margheritaworks.com';
+  var ids = ['fb-thanks', 'fb-error-msg', 'fb-error-generic'];
+
+  function hideAll() { ids.forEach(function (id) { var e = document.getElementById(id); if (e) e.style.display = 'none'; }); }
+  function show(id) { var e = document.getElementById(id); if (e) e.style.display = 'block'; }
+  function val(name) { var el = form.querySelector('[name="' + name + '"]:checked'); return el ? el.value : ''; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hideAll();
+    var submit = document.getElementById('fb-submit');
+    var type = val('type') || 'other';
+    var message = form.message.value.trim();
+    var email = form.email.value.trim();
+    var role = val('role');
+
+    // ハニーポット：入力があれば無視して成功扱い。
+    if (form.website && form.website.value) { form.reset(); show('fb-thanks'); return; }
+    // その他以外は本文必須（アプリと同じ）。
+    if (type !== 'other' && !message) { show('fb-error-msg'); return; }
+
+    var payload = {
+      app: 'ensemble-stage', type: type, message: message,
+      source: 'web', client_ts: new Date().toISOString()
+    };
+    if (email) payload.email = email;
+    if (role) payload.poll = { q: 'role-v1', answer: role };
+
+    submit.disabled = true;
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (res.ok) { form.reset(); show('fb-thanks'); }
+      else if (res.status >= 400 && res.status < 500) { show('fb-error-generic'); submit.disabled = false; }
+      else { mailFallback(type, message, email, role); submit.disabled = false; }
+    }).catch(function () {
+      mailFallback(type, message, email, role);
+      submit.disabled = false;
+    });
+  });
+
+  function mailFallback(type, message, email, role) {
+    var subject = '[吹奏楽セッティング] ' + type;
+    var body = message;
+    if (role) body += '\n\nRole: ' + role;
+    if (email) body += '\nReply-To: ' + email;
+    window.location.href = 'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "080f9a36ec824583b4e20d654374ac38"}'></script>
 </body>
 </html>
