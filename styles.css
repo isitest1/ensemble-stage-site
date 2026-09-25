@@ -217,10 +217,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 760px) {
   :root { --gutter: 16px; --section-gap: 80px; --card-pad: 24px; --r-card: 28px; --r-frame: 36px; }
   .nav-wrap { padding-top: 12px; }
-  .nav { height: 56px; padding-left: 16px; }
+  .nav { height: 56px; padding-left: 16px; gap: 10px; }
   .nav__links { display: none; }
   .nav__support { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; margin-left: auto; color: var(--accent); font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap; }
   .brand span { font-size: 16px; }
+  /* サブページ（言語切替あり）はモバイルでブランド名を隠しアイコンのみ表示。
+     言語切替・ボタンとの重なりを防ぐ。トップページのブランド（lang class 無し）は影響なし。 */
+  .brand .lang-ja, .brand .lang-en { display: none; }
+  .nav__right, .lang-switch { flex-shrink: 0; }
   .hero { padding: 56px 0 40px; }
   .actions .btn { width: 100%; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
